@@ -38,47 +38,51 @@
 
 
 
-let slides = document.querySelectorAll('.slide-moves');
+    let slides = document.querySelectorAll('.slide-moves');
 
-let slider = document.querySelector(".slider");
+    let slider = document.querySelector(".slider");
 
-let prevButton = document.getElementById('prev');
-let nextButton = document.getElementById('next');
+    let prevButton = document.getElementById('prev');
+    let nextButton = document.getElementById('next');
 
-let currentSlide = 0;
+    let currentSlide = 0;
 
-nextButton.addEventListener("click", () => {
-    imageMove('next');
-})
+    nextButton.addEventListener("click", () => {
+        imageMove('next');
+    })
 
-prevButton.addEventListener("click", () => {
-    imageMove('prev');
-})
+    prevButton.addEventListener("click", () => {
+        imageMove('prev');
+    })
 
-function imageMove(direction) {
-    const image = document.querySelectorAll('[data-imag]');
-    image.forEach((item,index) => {
-        if(index === currentSlide){
-            item.classList.add("active");
+    function imageMove(direction) {
+        const image = document.querySelectorAll('[data-imag]');
+        image.forEach((item,index) => {
+            if(index === currentSlide){
+                item.classList.add("active");
+            }else{
+                item.classList.remove("active");
+            }
+        });
+
+        if(direction === "next"){
+            currentSlide++;
         }else{
-            item.classList.remove("active");
+            currentSlide--;
         }
-    });
 
-    if(direction === "next"){
-        currentSlide++;
-    }else{
-        currentSlide--;
+        if(currentSlide < 0){
+            currentSlide = image.length - 1;
+        }else if(currentSlide >= image.length){
+            currentSlide = 0;
+        }    
+    
+
+        // image[currentSlide].classList.add("active");
     }
 
-    if(currentSlide < 0){
-        currentSlide = image.length - 1;
-    }else if(currentSlide >= image.length){
-        currentSlide = 0;
-    }    
 
-    image[currentSlide].classList.add("active");
-}
+
 
 
 
