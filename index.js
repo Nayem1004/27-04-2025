@@ -45,17 +45,38 @@ let slider = document.querySelector(".slider");
 let prevButton = document.getElementById('prev');
 let nextButton = document.getElementById('next');
 
-currentNmber = 0;
+let currentSlide = 0;
 
-function imageMove(){
-    nextButton.addEventListener('click',() => {
-        currentNmber++;
-        if(currentNmber >= slides.length){
-            currentNmber = 0;
-        }
-        imageMove(currentNmber);
+nextButton.addEventListener("click", () => {
+   imageMove();
+})
 
-    });
+prevButton.addEventListener("click", () => {
+    imageMove();
+})
+
+function imageMove(direction) {
+    // for (let i = 0; i < slides.length; i++) {
+    //     slides[i].classList.remove('active');
+    // }
+    const image = document.querySelectorAll('[data-image]');
+    image.forEach((slide-moves) => {
+
+    })
+    
+    // if (direction === 'next') {
+    //     currentSlide = currentSlide + 1;
+    //     if (currentSlide >= slides.length) {
+    //         currentSlide = 0;
+    //     }
+    // } else if (direction === 'prev') {
+    //     currentSlide = currentSlide - 1;
+    //     if (currentSlide < 0) {
+    //         currentSlide = slides.length - 1;
+    //     }
+    // }
+    
+    // slides[currentSlide].classList.add('active');
 }
 
 
