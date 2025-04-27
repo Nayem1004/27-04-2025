@@ -48,20 +48,36 @@ let nextButton = document.getElementById('next');
 let currentSlide = 0;
 
 nextButton.addEventListener("click", () => {
-   imageMove();
+    imageMove('next');
 })
 
 prevButton.addEventListener("click", () => {
-    imageMove();
+    imageMove('prev');
 })
 
 function imageMove(direction) {
-    const image = document.querySelectorAll('[data-image]');
-    image.forEach(() => {
-        
-    })
-    
-  
+    const image = document.querySelectorAll('[data-imag]');
+    image.forEach((item,index) => {
+        if(index === currentSlide){
+            item.classList.add("active");
+        }else{
+            item.classList.remove("active");
+        }
+    });
+
+    if(direction === "next"){
+        currentSlide++;
+    }else{
+        currentSlide--;
+    }
+
+    if(currentSlide < 0){
+        currentSlide = image.length - 1;
+    }else if(currentSlide >= image.length){
+        currentSlide = 0;
+    }    
+
+    image[currentSlide].classList.add("active");
 }
 
 
