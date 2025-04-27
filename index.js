@@ -48,7 +48,7 @@ let nextButton = document.getElementById('next');
 currentNmber = 0;
 
 function imageMove(){
-    prevButton.addEventListener('click',() => {
+    nextButton.addEventListener('click',() => {
         currentNmber++;
         if(currentNmber >= slides.length){
             currentNmber = 0;
