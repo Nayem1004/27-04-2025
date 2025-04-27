@@ -56,27 +56,12 @@ prevButton.addEventListener("click", () => {
 })
 
 function imageMove(direction) {
-    // for (let i = 0; i < slides.length; i++) {
-    //     slides[i].classList.remove('active');
-    // }
     const image = document.querySelectorAll('[data-image]');
-    image.forEach((slide-moves) => {
-
+    image.forEach(() => {
+        
     })
     
-    // if (direction === 'next') {
-    //     currentSlide = currentSlide + 1;
-    //     if (currentSlide >= slides.length) {
-    //         currentSlide = 0;
-    //     }
-    // } else if (direction === 'prev') {
-    //     currentSlide = currentSlide - 1;
-    //     if (currentSlide < 0) {
-    //         currentSlide = slides.length - 1;
-    //     }
-    // }
-    
-    // slides[currentSlide].classList.add('active');
+  
 }
 
 
